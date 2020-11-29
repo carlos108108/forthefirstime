@@ -4,3 +4,4 @@ i have added new sentence into this file
 and again new staged line
 this could be an unstaged line
 tak nevim
+už mam tlacitko push nejspis
