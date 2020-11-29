@@ -5,3 +5,4 @@ and again new staged line
 this could be an unstaged line
 tak nevim
 už mam tlacitko push nejspis
+uz jen srovnavam 
