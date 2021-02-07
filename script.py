@@ -1,3 +1,52 @@
+#conversion from roman to arab (from 1 to 3999)
+
+
+def preved(znak):
+    if znak == 'I':
+        a = 1
+    if znak == 'V':
+        a = 5
+    if znak == 'X':
+        a = 10
+    if znak == 'L':
+        a = 50
+    if znak == 'C':
+        a = 100
+    if znak == 'D':
+        a = 500
+    if znak == 'M':
+        a = 1000
+    return a
+
+
+def to_arab(rimske):
+    arab = 0
+    arablist = list()
+    for i, znak in enumerate(rimske):
+        a = preved(znak)
+        arablist.append(a)
+
+    while arablist:
+        try:
+            for char in arablist:
+                c = arablist.pop(0)
+                if c < arablist[0]:
+                    d = arablist.pop(0)
+                    e = d - c
+                    arab += e
+                else:
+                    arab += c
+
+        except IndexError:
+            arab += c
+            return arab
+    return arab
+
+print(to_arab('MMCMXCIX'))
+print()
+
+
+
 #conversion from arab to roman (from 1 to 3999)
 
 
@@ -75,49 +124,3 @@ def to_roman(sekvence):
 print(to_roman(1234))
 print()
 
-#conversion from roman to arab (from 1 to 3999)
-
-
-def preved(znak):
-    if znak == 'I':
-        a = 1
-    if znak == 'V':
-        a = 5
-    if znak == 'X':
-        a = 10
-    if znak == 'L':
-        a = 50
-    if znak == 'C':
-        a = 100
-    if znak == 'D':
-        a = 500
-    if znak == 'M':
-        a = 1000
-    return a
-
-
-def to_arab(rimske):
-    arab = 0
-    arablist = list()
-    for i, znak in enumerate(rimske):
-        a = preved(znak)
-        arablist.append(a)
-
-    while arablist:
-        try:
-            for char in arablist:
-                c = arablist.pop(0)
-                if c < arablist[0]:
-                    d = arablist.pop(0)
-                    e = d - c
-                    arab += e
-                else:
-                    arab += c
-
-        except IndexError:
-            arab += c
-            return arab
-    return arab
-
-print(to_arab('MMCMXCIX'))
-print()
