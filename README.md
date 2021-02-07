@@ -1,8 +1,1 @@
-# forthefirstime
-i will test my Git knowledge on this repo
-i have added new sentence into this file
-and again new staged line
-this could be an unstaged line
-tak nevim
-už mam tlacitko push nejspis
-uz jen srovnavam 
+conversion roman to arab and back in range(1,3999)
