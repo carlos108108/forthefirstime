@@ -1,8 +1,12 @@
-#prevod z arabskych na rimske
+#conversion from arab to roman (from 1 to 3999)
+
+
 def prevod_tisice(numero):
     if numero in range(1,4):
         t = 'M' * numero
         return t
+    
+    
 def prevod_stovky(numero):
     if numero == 0:
         s = ''
@@ -15,6 +19,8 @@ def prevod_stovky(numero):
     else:
         s = 'CM'
     return s
+
+
 def prevod_desitky(numero):
     if numero == 0:
         d = ''
@@ -27,6 +33,8 @@ def prevod_desitky(numero):
     else:
         d = 'XC'
     return d
+
+
 def prevod_jednotky(numero):
     if numero == 0:
         j = ''
@@ -39,6 +47,8 @@ def prevod_jednotky(numero):
     else:
         j = 'IX'
     return j
+
+
 def to_roman(sekvence):
     sekvence = str(sekvence)
     retezec = ''
@@ -61,11 +71,13 @@ def to_roman(sekvence):
         numero = int(sekvence[0])
         x = prevod_jednotky(numero)
         retezec += x
-
     return retezec
 print(to_roman(1234))
+print()
 
-#prevod z rimskych na arabske
+#conversion from roman to arab (from 1 to 3999)
+
+
 def preved(znak):
     if znak == 'I':
         a = 1
@@ -106,4 +118,6 @@ def to_arab(rimske):
             arab += c
             return arab
     return arab
+
 print(to_arab('MMCMXCIX'))
+print()
