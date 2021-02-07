@@ -22,7 +22,7 @@ def preved(znak):
 def to_arab(rimske):
     arab = 0
     arablist = list()
-    for i, znak in enumerate(rimske):
+    for znak in rimske:
         a = preved(znak)
         arablist.append(a)
 
