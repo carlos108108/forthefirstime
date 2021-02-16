@@ -1,31 +1,17 @@
-#conversion from roman to arab (from 1 to 3999)
+# conversion from roman to arab (from 1 to 3999)
 
 
-def preved(znak):
-    if znak == 'I':
-        a = 1
-    if znak == 'V':
-        a = 5
-    if znak == 'X':
-        a = 10
-    if znak == 'L':
-        a = 50
-    if znak == 'C':
-        a = 100
-    if znak == 'D':
-        a = 500
-    if znak == 'M':
-        a = 1000
-    return a
+transfer = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
 
 
-def to_arab(rimske):
+def to_arab(roman):
+    a = None
     arab = 0
     arablist = list()
-    for i, znak in enumerate(rimske):
-        a = preved(znak)
+    for char in roman:
+        a = transfer.get(char)
         arablist.append(a)
-
+    print(arablist)
     while arablist:
         try:
             for char in arablist:
@@ -42,12 +28,12 @@ def to_arab(rimske):
             return arab
     return arab
 
-print(to_arab('MMCMXCIX'))
+print(to_arab('MMCCCIX'))
 print()
 
 
 
-#conversion from arab to roman (from 1 to 3999)
+# conversion from arab to roman (from 1 to 3999)
 
 
 def prevod_tisice(numero):
